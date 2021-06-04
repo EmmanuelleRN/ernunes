@@ -37,4 +37,4 @@ title: Emmanuelle R. Nunes
 
 I'm a Data Scientist at Microsoft. I love sharing knowledge, this being why I decided to create this blog. In here I hope to share about courses I'm taking and explain concepts for a broader audience in an easier way. I hope you can enjoy my space and contact me if needed.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/resume.pdf" "newtab" >}}CV{{< /staticref >}}.
