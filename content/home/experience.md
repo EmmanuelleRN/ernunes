@@ -22,24 +22,47 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: CEO
-    company: GenCoin
+  - title: Senior Data Scientist
+    company: Lionbridge
     company_url: ''
-    location: California
-    date_start: '2017-01-01'
+    location: Reading, UK
+    date_start: '2021-05-01'
     date_end: ''
     description: |2-
         Responsibilities include:
         
-        * Analysing
-        * Modelling
-        * Deploying
-        
-  - title: Professor
-    company: University X
+        * Data Quality Analysis
+        * Game related predictions and analysis
+        * Mentoring of junior data analysts
+  
+  - title: Data Scientist
+    company: Lionbridge
     company_url: ''
-    location: California
-    date_start: '2016-01-01'
-    date_end: '2016-12-31'
-    description: Taught electronic engineering and researched semiconductor physics.
+    location: Reading, UK
+    date_start: '2018-09-16'
+    date_end: '2021-05-01'
+    description: |2-
+        Responsibilities include:
+        
+        * Data Quality Analysis
+        * Game related predictions and analysis
+        
+  - title: Data Scientist
+    company: PagSeguro
+    company_url: ''
+    location: Sao Paulo, Brasil
+    date_start: '2017-09-21'
+    date_end: '2012-08-04'
+    description: |2-
+        Responsibilities include:
+        
+        * Analysis for different areas of the company
+        
+  - title: Pricing Intern
+    company: B3
+    company_url: ''
+    location: Sao Paulo, Brasil
+    date_start: '2017-01-02'
+    date_end: '2017-09-18'
+    description: Use of time series analysis to understand the prices of stock and commodities
 ---
