@@ -1,0 +1,59 @@
+---
+title: Basic Statistics - Part 1
+author: Emmanuelle R. Nunes
+date: September 14 2021
+slug: September-14-2021-basic-statistics-part-1
+categories: 
+  - R
+  - Statistics
+tags: 
+  - introduction
+  - stat
+  - R
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-14T18:57:15+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+ 
+## Statistical Analysis
+
+So, you are starting your journey into the Statistical world, maybe because you are interested in analysing data, perhaps because you are working with datasets already and find yourself needing to draw meaningful conclusions from them, or perhaps you just want to know more about Statistics. At any point working with data, you will need to analyse and understand your dataset to transform it into information to compare, predict, or test a theory.
+
+
+![statistical inference is like a detective work](https://us.123rf.com/450wm/belchonock/belchonock2103/belchonock210326388/166366806-male-detective-with-smoking-pipe-looking-through-magnifying-glass-on-beige-background.jpg?ver=6)
+
+
+In a very general way, we can say that science is interested in making **inferences** about something, and this inference can be:
+
+*	Deductive: From your premises to a conclusion 
+
+*	Inductive: Specific to general
+
+**Statistical Inference** is to collect, reduce, analyse and model data, usually a sample, to make inferences about the entire population of interest.
+
+## Types of Variables
+
+When thinking about variables, we have a few important types that we need to be able to differentiate:
+
+* Qualitative variables: Variables that are not measurement variables. They can be classified as:
+
+  * Nominal or categorical: When there is no implicit order. 
+    * Example: Gender, Race, Colour
+  * Ordinal: When there is an implied order. 
+    * Example: Socioeconomic status, instruction level
+
+* Quantitative variables: Variables whose values result from counting or measuring something. They can also be classified into 2 categories:
+
+  * Discrete: The possible values are a part of a finite or numerable set, frequently resulting in a count. 
+    * Example: number of children
+  * Continuous: The possible values belong to a real number set and are the result of a measurement. 
+    * Example: height, weight
+
+![Types of variables](https://statsandr.com/blog/variable-types_files/variable-types-and-examples.png)

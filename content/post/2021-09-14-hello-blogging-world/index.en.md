@@ -29,3 +29,5 @@ My idea is to write about Statistics, Machine Learning and anything that I learn
 I hope that, whoever you are, you can find meaning in this, and I hope you can achieve your objects! I’m delighted that I can be a part of your journey.
 
 <img src="https://images.theconversation.com/files/318807/original/file-20200305-127932-1k92koa.jpg?ixlib=rb-1.1.0&rect=0%2C0%2C4985%2C3330&q=45&auto=format&w=926&fit=clip"/>
+
+I'll be making use of R and Python to help with the understanding of the theory by applying it in some examples.
