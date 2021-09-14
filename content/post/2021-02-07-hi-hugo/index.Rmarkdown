@@ -19,7 +19,7 @@ projects: []
 
 # test
 
-hello, my name is Emmanuelle
+hello, my name is Emmanuelle. lala
 
 ```{r}
 summary(Orange)
