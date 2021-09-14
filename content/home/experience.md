@@ -33,7 +33,7 @@ experience:
         
         * Data Quality Analysis
         * Game related predictions and analysis
-        * Mentoring of junior data analysts
+        * Mentoring junior data analysts
   
   - title: Data Scientist
     company: Lionbridge
