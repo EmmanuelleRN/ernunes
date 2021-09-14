@@ -3,6 +3,7 @@ title: Hello Blogging World
 author: Emmanuelle R. Nunes
 date: '2021-09-14'
 slug: hello-blogging-world
+draft: false
 categories:
   - R
   - Statistics
