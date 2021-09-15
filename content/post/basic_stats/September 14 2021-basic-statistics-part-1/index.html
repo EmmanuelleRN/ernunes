@@ -1,0 +1,98 @@
+---
+title: Basic Statistics - Part 1
+author: Emmanuelle R. Nunes
+date: September 14 2021
+slug: September-14-2021-basic-statistics-part-1
+categories: 
+  - R
+  - Statistics
+tags: 
+  - introduction
+  - stat
+  - R
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-15T18:57:15+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="statistical-analysis" class="section level2">
+<h2>Statistical Analysis</h2>
+<p>So, you are starting your journey into the Statistical world, maybe because you are interested in analysing data, perhaps because you are working with datasets already and find yourself needing to draw meaningful conclusions from them, or perhaps you just want to know more about Statistics. At any point working with data, you will need to analyse and understand your dataset to transform it into information to compare, predict, or test a theory.</p>
+<div class="figure">
+<img src="https://us.123rf.com/450wm/belchonock/belchonock2103/belchonock210326388/166366806-male-detective-with-smoking-pipe-looking-through-magnifying-glass-on-beige-background.jpg?ver=6" alt="" />
+<p class="caption">statistical inference is like a detective work</p>
+</div>
+<p>In a very general way, we can say that science is interested in making <strong>inferences</strong> about something, and this inference can be:</p>
+<ul>
+<li><p>Deductive: From your premises to a conclusion</p></li>
+<li><p>Inductive: Specific to general</p></li>
+</ul>
+<p><strong>Statistical Inference</strong> is to collect, reduce, analyse and model data, usually a sample, to make inferences about the entire population of interest.</p>
+</div>
+<div id="types-of-variables" class="section level2">
+<h2>Types of Variables</h2>
+<p>When thinking about variables, we have a few important types that we need to be able to differentiate:</p>
+<ul>
+<li><p>Qualitative variables: Variables that are not measurement variables. They can be classified as:</p>
+<ul>
+<li>Nominal or categorical: When there is no implicit order.
+<ul>
+<li>Example: Gender, Race, Colour</li>
+</ul></li>
+<li>Ordinal: When there is an implied order.
+<ul>
+<li>Example: Socioeconomic status, instruction level</li>
+</ul></li>
+</ul></li>
+<li><p>Quantitative variables: Variables whose values result from counting or measuring something. They can also be classified into 2 categories:</p>
+<ul>
+<li>Discrete: The possible values are a part of a finite or numerable set, frequently resulting in a count.
+<ul>
+<li>Example: number of children</li>
+</ul></li>
+<li>Continuous: The possible values belong to a real number set and are the result of a measurement.
+<ul>
+<li>Example: height, weight</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="https://statsandr.com/blog/variable-types_files/variable-types-and-examples.png" alt="" />
+<p class="caption">Types of variables</p>
+</div>
+</div>
+<div id="graphics" class="section level2">
+<h2>Graphics</h2>
+<p>Whenever studying a variable, our most significant interest is to understand the behaviour of this variable. The best way of understanding the <strong>distribution</strong> of a variable is by using charts.</p>
+<div id="charts-for-qualitative-variables" class="section level3">
+<h3>Charts for Qualitative Variables</h3>
+<p>There are many ways of representing qualitative charts, one of the most famous is the bar chart. Using ggplot2 we can create a bar chart in R.</p>
+<pre class="r"><code>library(ggplot2)    # charts
+library(dplyr)      # data manipulation
+
+data.frame(colour = c(&#39;red&#39;, &#39;blue&#39;, &#39;green&#39;),
+           frequency = c(10, 50, 88)) %&gt;%
+  ggplot(aes(x = colour, y = frequency)) +
+  geom_col()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="charts-for-quantitative-variables" class="section level3">
+<h3>Charts for Quantitative Variables</h3>
+<p>One of the most famous ways to represent this kind of data is by using boxplots.</p>
+<pre class="r"><code># generate 50 random number from 40 to 100
+data.frame(weight = runif(n = 50, min = 40, max = 100)) %&gt;% 
+  ggplot(aes(y = weight)) +
+  geom_boxplot()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+</div>
