@@ -90,3 +90,15 @@ data.frame(weight = runif(n = 50, min = 40, max = 100)) %>%
   ggplot(aes(y = weight)) +
   geom_boxplot()
 ```
+
+## Descriptive Statistics
+
+Descriptive statistics gives you a general idea of trends in your data including:
+
+* **Mean**: Average of a data set.
+  * It can be written as:
+  
+  $$\bar{X} = \frac{x_1 + ... + x_n}{n} = \frac{1}{n}\sum_{i=1}^{n}{x_i}$$
+
+* **Median**: Middle of the set of numbers.
+* **Mode**: Most common number in a set.
