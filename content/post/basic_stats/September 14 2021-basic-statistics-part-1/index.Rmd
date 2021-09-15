@@ -13,7 +13,7 @@ tags:
 subtitle: ''
 summary: ''
 authors: []
-lastmod: '2021-09-14T18:57:15+01:00'
+lastmod: '2021-09-15T18:57:15+01:00'
 featured: no
 image:
   caption: ''
@@ -21,6 +21,10 @@ image:
   preview_only: no
 projects: []
 ---
+ 
+```{r echo = FALSE}
+knitr::opts_chunk$set(fig.retina = 2, message = FALSE, warning = FALSE)
+```
  
 ## Statistical Analysis
 
@@ -57,3 +61,32 @@ When thinking about variables, we have a few important types that we need to be 
     * Example: height, weight
 
 ![Types of variables](https://statsandr.com/blog/variable-types_files/variable-types-and-examples.png)
+
+## Graphics
+
+Whenever studying a variable, our most significant interest is to understand the behaviour of this variable. The best way of understanding the **distribution** of a variable is by using charts.
+
+### Charts for Qualitative Variables
+
+There are many ways of representing qualitative charts, one of the most famous is the bar chart. Using ggplot2 we can create a bar chart in R. 
+ 
+```{r eval = TRUE}
+library(ggplot2)    # charts
+library(dplyr)      # data manipulation
+
+data.frame(colour = c('red', 'blue', 'green'),
+           frequency = c(10, 50, 88)) %>%
+  ggplot(aes(x = colour, y = frequency)) +
+  geom_col()
+```
+
+### Charts for Quantitative Variables
+
+One of the most famous ways to represent this kind of data is by using boxplots.
+
+```{r eval = TRUE}
+# generate 50 random number from 40 to 100
+data.frame(weight = runif(n = 50, min = 40, max = 100)) %>% 
+  ggplot(aes(y = weight)) +
+  geom_boxplot()
+```
