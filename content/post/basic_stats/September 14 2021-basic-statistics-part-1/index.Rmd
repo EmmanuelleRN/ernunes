@@ -101,4 +101,52 @@ Descriptive statistics gives you a general idea of trends in your data including
   $$\bar{X} = \frac{x_1 + ... + x_n}{n} = \frac{1}{n}\sum_{i=1}^{n}{x_i}$$
 
 * **Median**: Middle of the set of numbers.
+  * It can be defined as:
+  
+\[
+    Md(x)= 
+\begin{cases}
+    x_{\frac{n+1}{2}},& \text{if n is odd}\\
+    x_{\frac{n}{2}} + x_{(\frac{n}{2}+1)}, & \text{if n is even}
+\end{cases}
+\]
+
 * **Mode**: Most common number in a set.
+
+### Spread Measures
+
+To summarise all the information of a variable into only one central measure hides all the information about the spread and variability of that particular variable. For example, let's assume that we have the test scores of five students:
+
+```{r}
+data.frame(student = c(LETTERS[1:5]),
+           test1 = c(3, 1, 5, 3, 3),
+           test2 = c(4, 3, 5, 5, 5),
+           test3 = c(5, 5, 5, 5, 5),
+           test4 = c(6, 7, 5, 7, 6),
+           test5 = c(7, 9, 5, NA, 6)) %>%
+  knitr::kable()
+```
+
+If we calculate the mean test score per student, we have that $\bar{A}=\bar{B}=\bar{C}=\bar{D}=\bar{E}=5$. Still, we don't know about the variability of each student score, so if we use only a single metric to represent a variable, we lose important information about it.
+
+To measure the dispersion of a variable we can use:
+
+* Variance:
+
+  $$Var(X) = \frac{\sum_{i=1}^n{(x_i-\bar{x})^2}}{n}$$
+  
+* Standard Deviation: Root square of the variance
+
+$$std(X) = \sqrt{Var(X)}$$
+* Range: Difference between lowest and highest values.
+
+* Quantiles
+  * The 0.5 quantile represents the median (q(0.5))
+
+## Simmetry
+
+We can use quantiles to understand if our distribution is symmetric. If your observations are symmetric, then $Md(X) = \bar{X} = Mode(X)$.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Relationship_between_mean_and_median_under_different_skewness.png/434px-Relationship_between_mean_and_median_under_different_skewness.png"/>
+
+A distribution is ** positively skewed** or **right-skewed** if the quantiles on the right are farther from the median than those on the left. If the contrary happens, then the distribution is **negatively skewed** or **left-skewed**.

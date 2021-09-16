@@ -105,7 +105,105 @@ data.frame(weight = runif(n = 50, min = 40, max = 100)) %&gt;%
 <li>It can be written as:</li>
 </ul>
 <p><span class="math display">\[\bar{X} = \frac{x_1 + ... + x_n}{n} = \frac{1}{n}\sum_{i=1}^{n}{x_i}\]</span></p></li>
-<li><p><strong>Median</strong>: Middle of the set of numbers.</p></li>
-<li><p><strong>Mode</strong>: Most common number in a set.</p></li>
+<li><p><strong>Median</strong>: Middle of the set of numbers.</p>
+<ul>
+<li>It can be defined as:</li>
+</ul></li>
 </ul>
+<p><span class="math display">\[
+    Md(x)= 
+\begin{cases}
+    x_{\frac{n+1}{2}},&amp; \text{if n is odd}\\
+    x_{\frac{n}{2}} + x_{(\frac{n}{2}+1)}, &amp; \text{if n is even}
+\end{cases}
+\]</span></p>
+<ul>
+<li><strong>Mode</strong>: Most common number in a set.</li>
+</ul>
+<div id="spread-measures" class="section level3">
+<h3>Spread Measures</h3>
+<p>To summarise all the information of a variable into only one central measure hides all the information about the spread and variability of that particular variable. For example, let’s assume that we have the test scores of five students:</p>
+<pre class="r"><code>data.frame(student = c(LETTERS[1:5]),
+           test1 = c(3, 1, 5, 3, 3),
+           test2 = c(4, 3, 5, 5, 5),
+           test3 = c(5, 5, 5, 5, 5),
+           test4 = c(6, 7, 5, 7, 6),
+           test5 = c(7, 9, 5, NA, 6)) %&gt;%
+  knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">student</th>
+<th align="right">test1</th>
+<th align="right">test2</th>
+<th align="right">test3</th>
+<th align="right">test4</th>
+<th align="right">test5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">5</td>
+<td align="right">7</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="left">C</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">D</td>
+<td align="right">3</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">7</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">E</td>
+<td align="right">3</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">6</td>
+</tr>
+</tbody>
+</table>
+<p>If we calculate the mean test score per student, we have that <span class="math inline">\(\bar{A}=\bar{B}=\bar{C}=\bar{D}=\bar{E}=5\)</span>. Still, we don’t know about the variability of each student score, so if we use only a single metric to represent a variable, we lose important information about it.</p>
+<p>To measure the dispersion of a variable we can use:</p>
+<ul>
+<li><p>Variance:</p>
+<p><span class="math display">\[Var(X) = \frac{\sum_{i=1}^n{(x_i-\bar{x})^2}}{n}\]</span></p></li>
+<li><p>Standard Deviation: Root square of the variance</p></li>
+</ul>
+<p><span class="math display">\[std(X) = \sqrt{Var(X)}\]</span>
+* Range: Difference between lowest and highest values.</p>
+<ul>
+<li>Quantiles
+<ul>
+<li>The 0.5 quantile represents the median (q(0.5))</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="simmetry" class="section level2">
+<h2>Simmetry</h2>
+<p>We can use quantiles to understand if our distribution is symmetric. If your observations are symmetric, then <span class="math inline">\(Md(X) = \bar{X} = Mode(X)\)</span>.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Relationship_between_mean_and_median_under_different_skewness.png/434px-Relationship_between_mean_and_median_under_different_skewness.png"/></p>
+<p>A distribution is ** positively skewed** or <strong>right-skewed</strong> if the quantiles on the right are farther from the median than those on the left. If the contrary happens, then the distribution is <strong>negatively skewed</strong> or <strong>left-skewed</strong>.</p>
 </div>
