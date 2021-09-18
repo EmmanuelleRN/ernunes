@@ -1,40 +1,29 @@
 ---
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellusac
-  convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac
-  faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien
-  eu, pulvinar tempor diam.
+abstract: In their paper, OpenAI explores the use of Evolution Strategies (ES) algorithms as an alternative to Reinforcement Learning techniques claiming that one of this technique’s key differentiators is its scalability. I aim to compare both approaches, and I conducted experiments using the OpenAI technique, which were found to display quick learning behaviour if provided with sufficient compute resources.
+
 address:
-  city: Stanford
-  country: United States
-  postcode: "94305"
-  region: CA
-  street: 450 Serra Mall
+  city: Manchester
+  country: United Kingdom
 all_day: false
 authors: []
-date: "2030-06-01T13:00:00Z"
-date_end: "2030-06-01T15:00:00Z"
-event: Wowchemy Conference
-event_url: https://example.org
+date: "2021-09-06T15:00:00Z"
+date_end: "2021-09-09T19:00:00Z"
+event: RSS Conference 2021
+event_url: https://rss.org.uk/training-events/conference2021/
 featured: false
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-  focal_point: Right
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/georgecushen
-location: Wowchemy HQ
+location: Mancesther Central
 projects:
-- internal-project
-publishDate: "2017-01-01T00:00:00Z"
+- external-project
 slides: example
-summary: An example talk using Wowchemy's Markdown slides feature.
-tags: []
-title: Example Talk
+summary: RSS Conference 2021 Fire-Talk presentation
+tags: 
+- Evolution Strategies
+- Reinforcement Learning
+- Poster
+title: Evolution Strategies (ES) as an alternative to Reinforcement Learning (RL)
 url_code: ""
-url_pdf: ""
-url_slides: ""
+url_pdf: static/Tuesday-RF-Emmanuelle-Rodrigues-Nunes.pdf
+url_slides: static/Tuesday-RF-Emmanuelle-Rodrigues-Nunes.pdf
 url_video: ""
 ---
 
