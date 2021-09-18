@@ -1,0 +1,118 @@
+---
+title: Basic Statistics - Part 2
+author: Emmanuelle R. Nunes
+date: '2021-09-17'
+slug: basic-statistics-part-2
+categories: 
+  - Statistics
+  - R
+  - Analysis
+tags: 
+  - introduction
+  - statistics
+  - R
+  - correlation
+  - bidimensional analysis
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-18T15:03:29+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="bidimensional-analysis" class="section level2">
+<h2>Bidimensional Analysis</h2>
+<p>Previously we talked about understanding the distribution of a single variable, i.e., to get a summary of the data set. Still, frequently we are interested in understanding how two or more variables behave together.</p>
+<p>When interested in two variables, we can have three scenarios:</p>
+<ul>
+<li>Both variables are qualitative
+<ul>
+<li>Data is summarised as a <strong>contingency table</strong></li>
+</ul></li>
+<li>Both variables are quantitative
+<ul>
+<li>Analysis based on scatterplots and <strong>correlation</strong></li>
+</ul></li>
+<li>One variable is qualitative, and the other one is quantitative
+<ul>
+<li>Analysis can be based on boxplots</li>
+</ul></li>
+</ul>
+<p>In the end, in every situation, our aim is to find possible relationships and associations between any two variables that can be found through charts or metrics.</p>
+<p>We can think about <strong>association</strong> as a ‘change in opinion’ about the behaviour of a variable in the presence (or not) of another variable. For example, if we ask ourselves, ‘Is there an association between height and sex in a particular community?’ To answer that, we can think about ‘what is the expected frequency of males above, for example, 170cm?’, we also need to think about ‘what is the expected frequency of females above 170cm?’ If the answer to both questions is approximately the same, there is no association between height and sex. Still, if the answers differ, there is likely an association between those two variables, and we need to incorporate this to better understand them.</p>
+<div id="association-between-quantitative-variables" class="section level3">
+<h3>Association between quantitative variables</h3>
+<p>To understand the association between two quantitative variables, we can use <em>scatterplots</em>. For example, the following data set shows us the years in service and the number of clients of different insurance agents.</p>
+<pre class="r"><code>insurance &lt;- data.frame(agency = c(LETTERS[1:6]),
+                        years_in_service = c(2, 4, 5, 10, 12, 15),
+                        clients = c(40, 52, 60, 70, 71, 88))
+
+insurance %&gt;% 
+  knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">agency</th>
+<th align="right">years_in_service</th>
+<th align="right">clients</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="right">2</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="right">4</td>
+<td align="right">52</td>
+</tr>
+<tr class="odd">
+<td align="left">C</td>
+<td align="right">5</td>
+<td align="right">60</td>
+</tr>
+<tr class="even">
+<td align="left">D</td>
+<td align="right">10</td>
+<td align="right">70</td>
+</tr>
+<tr class="odd">
+<td align="left">E</td>
+<td align="right">12</td>
+<td align="right">71</td>
+</tr>
+<tr class="even">
+<td align="left">F</td>
+<td align="right">15</td>
+<td align="right">88</td>
+</tr>
+</tbody>
+</table>
+<p>We can create a scatterplot to better understand the relationship of the variables. As suspected, the more years in service and agency has, the more clients it has, so the chart shows us a positive association between both variables.</p>
+<pre class="r"><code>insurance %&gt;%
+  ggplot(aes(x = years_in_service, y = clients)) +
+  geom_point()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>We can have 3 types of association between two variables:</p>
+<p><img src="https://statistics.laerd.com/statistical-guides/img/pearson-1-small.png"/></p>
+<ol style="list-style-type: decimal">
+<li>Positive association</li>
+<li>Negative association</li>
+<li>No association</li>
+</ol>
+<p>We can numerically measure the association between two variables by calculating their correlation.</p>
+<p><span class="math display">\[corr(X, Y) = \frac{\sum{x_iy_i - n\bar{x}\bar{y}}}{\sqrt{(\sum{x_i^2 - n\bar{x}^2})(\sum{y_i^2 - n\bar{y}^2})}},\]</span></p>
+<p>where <span class="math inline">\(-1 \leq corr(X, Y) \leq 1\)</span>.</p>
+<p>The closer to -1, the stronger is the negative correlation between two variables; the closer to 1, the stronger is the positive correlation; and if corr = 0, then there is no correlation between the variables.</p>
+</div>
+</div>

@@ -8,8 +8,10 @@ categories:
   - Statistics
 tags: 
   - introduction
-  - stat
+  - statistics
   - R
+  - central values
+  - dispersion
 subtitle: ''
 summary: ''
 authors: []
