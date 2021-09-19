@@ -14,23 +14,26 @@ featured: false
 location: Mancesther Central
 projects:
 - external-project
-slides: example
+slides: rss2021
 summary: RSS Conference 2021 Fire-Talk presentation
 tags: 
 - Evolution Strategies
 - Reinforcement Learning
 - Poster
+- Conference
+- RSS
 title: Evolution Strategies (ES) as an alternative to Reinforcement Learning (RL)
 url_code: ""
-url_pdf: static/Tuesday-RF-Emmanuelle-Rodrigues-Nunes.pdf
-url_slides: static/Tuesday-RF-Emmanuelle-Rodrigues-Nunes.pdf
+url_pdf: "static/Tuesday-RF-Emmanuelle-Rodrigues-Nunes.pdf"
+url_slides: ""
 url_video: ""
 ---
 
 {{% callout note %}}
-Click on the **Slides** button above to view the built-in slides feature.
+Click on the **Slides** button above to view slides.
 {{% /callout %}}
 
+<!---
 Slides can be added in a few ways:
 
 - **Create** slides using Wowchemy's [*Slides*](https://wowchemy.com/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
@@ -38,3 +41,4 @@ Slides can be added in a few ways:
 - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://wowchemy.com/docs/writing-markdown-latex/).
 
 Further event details, including [page elements](https://wowchemy.com/docs/writing-markdown-latex/) such as image galleries, can be added to the body of this page.
+-->

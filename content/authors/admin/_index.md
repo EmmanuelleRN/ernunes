@@ -1,6 +1,5 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: My interests include statistics, machine learning, health and social statistics.
 education:
   courses:
   - course: MSc Advanced Computer Science
@@ -18,7 +17,7 @@ interests:
 - Epidemiology
 organizations:
 - name: Microsoft / Lionbridge
-role: Data Scientist
+role: Senior Data Scientist
 social:
 - icon: envelope
   icon_pack: fas
@@ -35,6 +34,9 @@ superuser: true
 title: Emmanuelle R. Nunes
 ---
 
-I'm a Data Scientist at Microsoft. I love sharing knowledge, this being why I decided to create this blog. In here I hope to share about courses I'm taking and explain concepts for a broader audience in an easier way. I hope you can enjoy my space and contact me if needed.
+I'm a Senior Data Scientist at Microsoft. I currently work with Xbox games data. I’m the creator of <span style="color:purple"> RLadies </span> chapter in Reading, and I’m a certified The Carpentries Instructor.
+
+I love sharing knowledge; this being why I decided to create this blog. Here I hope to share about courses I'm taking and explain concepts for a broader audience. I hope you can enjoy my space and contact me if needed.
+
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/resume.pdf" "newtab" >}}CV{{< /staticref >}}.
