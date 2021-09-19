@@ -1,0 +1,31 @@
+---
+title: Conditional Probability
+author: Emmanuelle R. Nunes
+date: September 19 2021
+slug: September 19 2021-introduction-to-probability
+categories: []
+tags: []
+subtitle: and Independence
+summary: ''
+authors: []
+lastmod: '2021-09-19T15:52:58+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+For any two events A and B, with $\mathbb{P}(B) > 0$, we define the conditional probability of A given B ($\mathbb{P}(A|B)$) as
+
+$$\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}$$
+
+**Example:** We throw a dice once, and it lands on an even number. What is the probability of this number is 2?
+
+We can define A as "dice shows number 2", and B as "dice result is even", we have then that A = {2}, B = {2, 4, 6} and $A \cap B = {2}$, then
+
+$$\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)} = \frac{1}{3}$$
+
+## Independence
+
