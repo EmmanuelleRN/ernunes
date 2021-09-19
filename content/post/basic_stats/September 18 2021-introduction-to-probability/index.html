@@ -1,0 +1,84 @@
+---
+title: Introduction to Probability
+author: Emmanuelle R. Nunes
+date: September 18 2021
+slug: September 18 2021-introduction-to-probability
+categories: 
+  - Statistics
+  - R
+  - Probability
+tags: 
+  - introduction
+  - statistics
+  - probability
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-19T14:38:27+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Probability is at the heart of statistics, as most of the time, we won’t have the entire dataset to work on. Still, instead, we will need to understand how the population works relying on a sample. From these samples, we can calculate mean, median, standard deviations etc., from the observed frequencies, as they are estimates of unknown quantities that we haven’t observed.</p>
+<p>With reasonable assumptions and without directly observe the property of interest, we can create a theoretical model that reproduces the observed frequency distribution of interest. We call these models <strong>probabilistic models</strong>.</p>
+<p>Every experiment has a probabilistic model when we establish:</p>
+<ul>
+<li>Sample space <span class="math inline">\(\Omega\)</span>
+<ul>
+<li>Set of all possible outcomes for a given experiment</li>
+</ul></li>
+<li>Probability of <span class="math inline">\(\mathbb{P}(\omega)\)</span> for each element of <span class="math inline">\(\Omega\)</span>, i.e., we want the probability of a <em>random event</em> or <em>event</em></li>
+</ul>
+<p><strong>Example:</strong> We throw a fair coin twice. If H indicates heads and T indicates tails, the sample space is:</p>
+<p><span class="math display">\[\Omega = \{\omega_1, \omega_2, \omega_3, \omega_4\},\]</span></p>
+<p>Where <span class="math inline">\(\omega_1 = (H, H)\)</span>, <span class="math inline">\(\omega_2 = (H, T)\)</span>, <span class="math inline">\(\omega_3 = (T, H)\)</span> and <span class="math inline">\(\omega_4 = (T, T)\)</span>. As it is a fair coin, the probability of each <span class="math inline">\(\omega = \frac{1}{4}\)</span>. So, if we are interest in the Probability of a given event A = obtain the same side in both launches, then</p>
+<p><span class="math display">\[\mathbb{P}(A) = \mathbb{P}(\omega_1, \omega_4) = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}\]</span></p>
+<p>Generally, if <span class="math inline">\(A \in \Omega\)</span>, then <span class="math inline">\(\mathbb{P}(A) = \sum_j{\mathbb{P}(\omega_j)}\)</span></p>
+<div id="some-properties" class="section level3">
+<h3>Some properties</h3>
+<ul>
+<li><span class="math inline">\(0 \leq \mathbb{P}(A) \leq 1\)</span></li>
+<li>Probability is always between 0 and 1</li>
+<li><span class="math inline">\(\mathbb{P}(\varnothing) = 0\)</span></li>
+<li>Probability of the <strong>empty set</strong> or <em>impossible event</em>, i.e., an event that isn’t in <span class="math inline">\(\Omega\)</span> is 0</li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span></li>
+<li>Probability of all elements of <span class="math inline">\(\Omega\)</span> is 1, as it is the sum of all the elements and probability is bounded by 1</li>
+</ul>
+<p>Often, we are going to be interested in the union and intersection of different events. The following Venn diagram can help us see what this means.</p>
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRICEPM9UFi94QxF8JKDejP_6hh1ULFYSIN6nqBx4ltPdQl5T_PDOfjzxsZjDjKbk_O6R0&usqp=CAU"/></p>
+<ul>
+<li><span class="math inline">\(\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)\)</span>
+<ul>
+<li>This is called <em>addition rule</em> of probability</li>
+<li>Note that we need to remove the probability of intersection between A and B ($ (A B)$) as we already account for it in the individual sums.</li>
+<li>If the events are <strong>disjoint</strong> or <strong>independent</strong>, then the probability of intersection is 0 and the formula becomes <span class="math inline">\(\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B)\)</span></li>
+</ul></li>
+</ul>
+<p><img src="https://www.statology.org/wp-content/uploads/2021/02/disjoint1.png"/></p>
+<p>We can also be interested in the <strong>complimentary probability</strong>, i.e., the probability of event A not happening; we denote it as <span class="math inline">\(\mathbb{P}(\bar{A})\)</span>. It can also be represented as <span class="math inline">\(A^c\)</span>. And, we have that <span class="math inline">\(\mathbb{P}(A) + \mathbb{P}(\bar{A}) = 1\)</span>.</p>
+<p>Important properties about union, intersection and complimentary between events are:</p>
+<ul>
+<li><span class="math inline">\((A \cap B)^c = A^c \cup B^c\)</span></li>
+<li><span class="math inline">\((A \cup B)^c = A^c \cap B^c\)</span></li>
+<li><span class="math inline">\(A \cap \varnothing = \varnothing\)</span>, <span class="math inline">\(A \cup \varnothing = A\)</span></li>
+<li>$A = A $, <span class="math inline">\(A \cup \Omega = \Omega\)</span></li>
+<li><span class="math inline">\(\varnothing^c = \Omega\)</span>, <span class="math inline">\(\Omega^c = \varnothing\)</span></li>
+<li><span class="math inline">\(A \cap A^c = \varnothing\)</span>, <span class="math inline">\(A \cup A^c = \Omega\)</span></li>
+<li><span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></li>
+</ul>
+<p><strong>Example:</strong> Consider 2 events A and B, where <span class="math inline">\(\mathbb{P}(A) = \frac{1}{2}, \mathbb{P}(B) = \frac{1}{3}\)</span> and <span class="math inline">\(\mathbb{P}(A \cap B) = \frac{1}{4}\)</span>. We have then,</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\mathbb{P}(A^c) = 1 - \mathbb{P}(A) = \frac{1}{2}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbb{P}(B^c) = 1 - \mathbb{P}(B) = \frac{2}{3}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B) = \frac{1}{2} + \frac{1}{3} – \frac{1}{4} = \frac{7}{12}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbb{P}(A^c \cap B^c) = \mathbb{P}((A \cap B)^c) = 1 - \mathbb{P}(A \cup B) = 1 – \frac{7}{12} = \frac{5}{12}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbb{P}(A^c \cup B^c) = \mathbb{P}((A \cup B)^c) = 1 - \mathbb{P}(A \cap B) = 1 – \frac{1}{4} = \frac{3}{4}\)</span></p></li>
+</ol>
+</div>
