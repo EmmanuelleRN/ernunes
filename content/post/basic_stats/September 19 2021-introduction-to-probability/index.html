@@ -3,8 +3,18 @@ title: Conditional Probability
 author: Emmanuelle R. Nunes
 date: September 19 2021
 slug: September 19 2021-introduction-to-probability
-categories: []
-tags: []
+categories: 
+  - Introduction
+  - Statistics
+  - Probability
+  - Bayes theorem
+tags: 
+  - statistics
+  - introduction
+  - probability
+  - bayes
+  - conditional probability
+  - independence
 subtitle: and Independence
 summary: ''
 authors: []
@@ -27,4 +37,26 @@ projects: []
 <p><span class="math display">\[\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)} = \frac{1}{3}\]</span></p>
 <div id="independence" class="section level2">
 <h2>Independence</h2>
+<p>Independence between two or more variables can help us to ease some of our analysis. We say that two events A and B are independent if and only if <span class="math inline">\(\mathbb{P}(A \cap B) = \mathbb{P}(A) \mathbb{P}(B)\)</span>, i.e., two events are independent if the incidence of one event does not affect the probability of the other event. If the incidence of one event does affect the probability of the other event, then the events are dependent.</p>
+<p>The concept of conditional probability is closely related to independent events, and we can define independence between events using conditional probability.</p>
+<p>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if:</p>
+<p><span class="math display">\[\mathbb{P}(A\mid B) = \mathbb{P}(A \mid B^c) \text{ and } \mathbb{P}(B\mid A) = \mathbb{P}(B\mid A^c)\]</span></p>
+<p>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are dependent if :</p>
+<p><span class="math display">\[\mathbb{P}(A\mid B) \neq \mathbb{P}(A \mid B^c) \text{ or } \mathbb{P}(B\mid A) \neq \mathbb{P}(B\mid A^c)\]</span></p>
+<p><strong>Example:</strong> Two fair 6-sided dice are rolled, one red and one blue.
+<span class="math inline">\(A\)</span> = the red die’s result is 3.
+<span class="math inline">\(B\)</span> = the blue die’s result is 4.
+<span class="math inline">\(C\)</span> = the event that the sum of the rolls is 7.
+Are <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> mutually independent?</p>
+<p><span class="math display">\[\mathbb{P}(A|B) = \frac{1}{6} = \mathbb{P}(A \mid B^c) \implies \text{A and B are independent}\]</span></p>
+<p><span class="math display">\[\mathbb{P}(A|C) = \frac{1}{6} = \mathbb{P}(A \mid C^c) \implies \text{A and C are independent}\]</span></p>
+<p><span class="math display">\[\mathbb{P}(B|C) = \frac{1}{6} = \mathbb{P}(B \mid C^c) \implies \text{B and C are independent}\]</span></p>
+<p>Theses events are pairwise independent. However, in order for all three events to be mutually independent, each event must be independent with each intersection of the other events.</p>
+<p><span class="math display">\[\mathbb{P}\left(A\mid (B\cap C)\right) = 1 \text{ and } P\left(A\mid (B\cap C)^c\right)=\dfrac{1}{7}\]</span></p>
+<p>These are not equal, <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> are mutually dependent.</p>
+</div>
+<div id="bayes-theorem" class="section level1">
+<h1>Bayes theorem</h1>
+<p>One of the most essential conditional probability entities is the one from the Bayes theorem. The formula is given by:</p>
+<p><span class="math display">\[\mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A)\mathbb{P}(A)}{\mathbb{P}(B)}\]</span></p>
 </div>

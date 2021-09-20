@@ -3,8 +3,18 @@ title: Conditional Probability
 author: Emmanuelle R. Nunes
 date: September 19 2021
 slug: September 19 2021-introduction-to-probability
-categories: []
-tags: []
+categories: 
+  - Introduction
+  - Statistics
+  - Probability
+  - Bayes theorem
+tags: 
+  - statistics
+  - introduction
+  - probability
+  - bayes
+  - conditional probability
+  - independence
 subtitle: and Independence
 summary: ''
 authors: []
