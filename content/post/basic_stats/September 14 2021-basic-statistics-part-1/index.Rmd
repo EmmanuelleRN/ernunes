@@ -30,15 +30,15 @@ knitr::opts_chunk$set(fig.retina = 2, message = FALSE, warning = FALSE)
  
 ## Statistical Analysis
 
-So, you are starting your journey into the Statistical world, maybe because you are interested in analysing data, perhaps because you are working with datasets already and find yourself needing to draw meaningful conclusions from them, or perhaps you just want to know more about Statistics. At any point working with data, you will need to analyse and understand your dataset to transform it into information to compare, predict, or test a theory.
+So, you are starting your journey into the statistical world, maybe because you are interested in analysing data, perhaps because you are working with datasets already and find yourself needing to draw meaningful conclusions from them, or perhaps you just want to know more about statistics. At some point when working with data, you will want to analyse and understand your dataset to transform it into information to compare, predict, or test a theory.
 
 
-![statistical inference is like a detective work](https://us.123rf.com/450wm/belchonock/belchonock2103/belchonock210326388/166366806-male-detective-with-smoking-pipe-looking-through-magnifying-glass-on-beige-background.jpg?ver=6)
+![](https://us.123rf.com/450wm/belchonock/belchonock2103/belchonock210326388/166366806-male-detective-with-smoking-pipe-looking-through-magnifying-glass-on-beige-background.jpg?ver=6)
 
 
-In a very general way, we can say that science is interested in making **inferences** about something, and this inference can be:
+Statistical inference is a lot like a detective work. In a very general way, we can say that science is interested in making **inferences** about something, and this inference can be:
 
-*	Deductive: From your premises to a conclusion 
+*	Deductive: From a premise to a conclusion 
 
 *	Inductive: Specific to general
 
@@ -62,7 +62,7 @@ When thinking about variables, we have a few important types that we need to be 
   * Continuous: The possible values belong to a real number set and are the result of a measurement. 
     * Example: height, weight
 
-![Types of variables](https://statsandr.com/blog/variable-types_files/variable-types-and-examples.png)
+![](https://statsandr.com/blog/variable-types_files/variable-types-and-examples.png)
 
 ## Graphics
 
@@ -70,7 +70,7 @@ Whenever studying a variable, our most significant interest is to understand the
 
 ### Charts for Qualitative Variables
 
-There are many ways of representing qualitative charts, one of the most famous is the bar chart. Using ggplot2 we can create a bar chart in R. 
+There are many ways of representing qualitative charts, one of the most famous is the **barchart**. Using ggplot2 we can create a barchart in R. 
  
 ```{r eval = TRUE}
 library(ggplot2)    # charts
@@ -117,7 +117,9 @@ Descriptive statistics gives you a general idea of trends in your data including
 
 ### Spread Measures
 
-To summarise all the information of a variable into only one central measure hides all the information about the spread and variability of that particular variable. For example, let's assume that we have the test scores of five students:
+To summarise all the information of a variable into only one central measure hides all the information about the spread and variability of that particular variable.
+
+For example, let's assume that we have the test scores of five students:
 
 ```{r}
 data.frame(student = c(LETTERS[1:5]),
@@ -129,9 +131,12 @@ data.frame(student = c(LETTERS[1:5]),
   knitr::kable()
 ```
 
-If we calculate the mean test score per student, we have that $\bar{A}=\bar{B}=\bar{C}=\bar{D}=\bar{E}=5$. Still, we don't know about the variability of each student score, so if we use only a single metric to represent a variable, we lose important information about it.
+If we calculate the mean test score per student, we have:
+$$\bar{A}=\bar{B}=\bar{C}=\bar{D}=\bar{E}=5$$
 
-To measure the dispersion of a variable we can use:
+All students have a mean test score of 5. Still, the variability of each student score is hidden if we use only a single metric to represent a variable, so we lose vital information about it.
+
+We can measure the dispersion of variables by calculating the following:
 
 * Variance:
 
@@ -140,6 +145,7 @@ To measure the dispersion of a variable we can use:
 * Standard Deviation: Root square of the variance
 
 $$std(X) = \sqrt{Var(X)}$$
+
 * Range: Difference between lowest and highest values.
 
 * Quantiles
@@ -151,4 +157,4 @@ We can use quantiles to understand if our distribution is symmetric. If your obs
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Relationship_between_mean_and_median_under_different_skewness.png/434px-Relationship_between_mean_and_median_under_different_skewness.png"/>
 
-A distribution is ** positively skewed** or **right-skewed** if the quantiles on the right are farther from the median than those on the left. If the contrary happens, then the distribution is **negatively skewed** or **left-skewed**.
+A distribution is **positively skewed** or **right-skewed** if the quantiles on the right are farther from the median than those on the left. If the contrary happens, then the distribution is **negatively skewed** or **left-skewed**.

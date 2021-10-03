@@ -30,24 +30,36 @@ projects: []
 
 <div id="bidimensional-analysis" class="section level2">
 <h2>Bidimensional Analysis</h2>
-<p>Previously we talked about understanding the distribution of a single variable, i.e., to get a summary of the data set. Still, frequently we are interested in understanding how two or more variables behave together.</p>
+<p>Previously we talked about understanding the distribution of a single variable, i.e., to summarise the data set. Frequently we are interested in understanding how two or more variables behave together.</p>
 <p>When interested in two variables, we can have three scenarios:</p>
 <ul>
-<li>Both variables are qualitative
+<li>Both variables are <strong>qualitative</strong>
 <ul>
 <li>Data is summarised as a <strong>contingency table</strong></li>
 </ul></li>
-<li>Both variables are quantitative
+<li>Both variables are <strong>quantitative</strong>
 <ul>
-<li>Analysis based on scatterplots and <strong>correlation</strong></li>
+<li>Analysis based on <strong>scatterplots</strong> and <strong>correlation</strong></li>
 </ul></li>
-<li>One variable is qualitative, and the other one is quantitative
+<li>One variable is <strong>qualitative</strong>, and the other one is <strong>quantitative</strong>
 <ul>
-<li>Analysis can be based on boxplots</li>
+<li>Analysis can be based on <strong>boxplots</strong></li>
 </ul></li>
 </ul>
-<p>In the end, in every situation, our aim is to find possible relationships and associations between any two variables that can be found through charts or metrics.</p>
-<p>We can think about <strong>association</strong> as a ‘change in opinion’ about the behaviour of a variable in the presence (or not) of another variable. For example, if we ask ourselves, ‘Is there an association between height and sex in a particular community?’ To answer that, we can think about ‘what is the expected frequency of males above, for example, 170cm?’, we also need to think about ‘what is the expected frequency of females above 170cm?’ If the answer to both questions is approximately the same, there is no association between height and sex. Still, if the answers differ, there is likely an association between those two variables, and we need to incorporate this to better understand them.</p>
+<p>Ultimately, our aim is to find possible <strong>relationships</strong> and <strong>associations</strong> between any two variables using charts or metrics in every situation.</p>
+<p>We can think about <strong>association</strong> as a ‘change in opinion’ about the behaviour of a variable in the presence (or not) of another variable.</p>
+<p>For example, ‘Is there an association between height and sex in a particular community?’</p>
+<p>To answer that, we can think about the following:</p>
+<p>For an arbitrary height threshold of say, 170cm</p>
+<ul>
+<li>What is the expected frequency of males above the height threshold?</li>
+<li>What is the expected frequency of females above the same height threshold?</li>
+</ul>
+<p>If the answer to both questions is:</p>
+<ul>
+<li>approximately the same, there is no association between height and sex.</li>
+<li>if the answers differ, there is likely an association between those two variables, and we need to incorporate this fact to better understand them.</li>
+</ul>
 <div id="association-between-quantitative-variables" class="section level3">
 <h3>Association between quantitative variables</h3>
 <p>To understand the association between two quantitative variables, we can use <em>scatterplots</em>. For example, the following data set shows us the years in service and the number of clients of different insurance agents.</p>
@@ -98,7 +110,7 @@ insurance %&gt;%
 </tr>
 </tbody>
 </table>
-<p>We can create a scatterplot to better understand the relationship of the variables. As suspected, the more years in service and agency has, the more clients it has, so the chart shows us a positive association between both variables.</p>
+<p>We can create a scatterplot to better understand the relationship of the variables. As suspected, the more years in service and agency has, the more clients it has, so the chart shows us a <strong>positive association</strong> between both variables.</p>
 <pre class="r"><code>insurance %&gt;%
   ggplot(aes(x = years_in_service, y = clients)) +
   geom_point()</code></pre>
@@ -110,9 +122,33 @@ insurance %&gt;%
 <li>Negative association</li>
 <li>No association</li>
 </ol>
-<p>We can numerically measure the association between two variables by calculating their correlation.</p>
+<p>We can numerically measure the association between two variables by calculating their correlation. One of the most common ways of calculating it is by using <em>Pearson Correlation</em>:</p>
 <p><span class="math display">\[corr(X, Y) = \frac{\sum{x_iy_i - n\bar{x}\bar{y}}}{\sqrt{(\sum{x_i^2 - n\bar{x}^2})(\sum{y_i^2 - n\bar{y}^2})}},\]</span></p>
 <p>where <span class="math inline">\(-1 \leq corr(X, Y) \leq 1\)</span>.</p>
 <p>The closer to -1, the stronger is the negative correlation between two variables; the closer to 1, the stronger is the positive correlation; and if corr = 0, then there is no correlation between the variables.</p>
+<p>In R we can calculate the Pearson correlation using the function <code>cor</code>. As the correlation is approximately 0 we can say that x and y are not correlated.</p>
+<pre class="r"><code>set.seed(88) # set see to always have the same result - reproductibility
+x &lt;- runif(1:10) # generate 10 random numbers
+y &lt;- runif(1:10) # generate 10 random numbers
+
+cor(x, y)</code></pre>
+<pre><code>## [1] 0.02902127</code></pre>
+<p>You can also try to calculate the correlation without using the native function. And we can see that the result is the same either by using the native function or the one created.</p>
+<pre class="r"><code>correlation &lt;- function(x, y){
+  nx &lt;- length(x)
+  ny &lt;- length(y)
+  
+  if(nx != ny){
+    return(print(&quot;Vectors should have the same length&quot;))
+  }
+  
+  top_part &lt;- sum(x * y) - (nx * mean(x) * mean(y))
+  bottom_part &lt;- (sum(x^2) - (nx * mean(x)^2)) * ((sum(y^2) - (nx * mean(y)^2)))
+  
+  return(top_part / sqrt(bottom_part))
+}
+
+correlation(x, y)</code></pre>
+<pre><code>## [1] 0.02902127</code></pre>
 </div>
 </div>
