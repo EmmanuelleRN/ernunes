@@ -1,0 +1,134 @@
+---
+title: Random Variables
+author: Emmanuelle R. Nunes
+date: October 03 2021
+slug: October 03 2021-random-variables
+categories: 
+  - Probability
+  - Random Variables
+  - Introduction
+tags: 
+  - Probability
+  - Random Variables
+  - Introduction
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-10-03T15:06:53+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>We talked before about probability using simple sample spaces, but in reality, we will map situations to probabilistic models that cater to all possible results. The variables to which we are going to construct probabilistic models are called <strong>random variables</strong>.</p>
+<p>A random variable is a real-valued variable whose value is determined by an underlying random experiment. We usually show random variables by capital letters such as <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>. Since a random variable is a function, we can talk about its range. The range of a random variable <span class="math inline">\(X\)</span> is the set of possible values for <span class="math inline">\(X\)</span>.</p>
+<div id="discrete-random-variables" class="section level2">
+<h2>Discrete Random Variables</h2>
+<p><span class="math inline">\(X\)</span> is a discrete random variable, if its range is countable.</p>
+<p><strong>Example:</strong> Imagine that we extracted 2 balls without repositioning from an urn that initially contained 2 blue balls and 3 violet balls. Let’s define <span class="math inline">\(X\)</span> as the number of violet balls obtained after both extractions. The following chart shows us the possible outcomes for <span class="math inline">\(X\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Probability</th>
+<th>X</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BB</td>
+<td>1/10</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>BV</td>
+<td>3/10</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>VB</td>
+<td>3/10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>VV</td>
+<td>3/10</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Each result of the experiment is associated with a value of <span class="math inline">\(X\)</span>. Each of these results has a probability associated, which allow us to write the function (<em>x</em>, p(<em>x</em>)) that is a model for the distribution of <span class="math inline">\(X\)</span>. The function (<em>x</em>, p(<em>x</em>)) is called <strong>probability function</strong> of <span class="math inline">\(X\)</span>.</p>
+<p>In the table below, we have the probability distribution of <span class="math inline">\(X\)</span> for the example we just saw.</p>
+<table>
+<thead>
+<tr class="header">
+<th>x</th>
+<th>p(x)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1/10</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>6/10</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>3/10</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div id="special-distributions" class="section level3">
+<h3>Special distributions</h3>
+<p>Some random variables adapt very well to a series of practical problems, and they have been given unique names.</p>
+<div id="discrete-uniform-distribution" class="section level4">
+<h4>Discrete Uniform distribution</h4>
+<p>Each value has the same probability of happening. X is uniformly distributed if and only if</p>
+<p><span class="math display">\[\mathbb{P}(X = x_i) = \frac{1}{n} \forall i=1,…,n\]</span></p>
+</div>
+<div id="bernoulli" class="section level4">
+<h4>Bernoulli</h4>
+<p>It can only take two possible values, usually 0 and 1. This random variable models random experiments that have two possible outcomes, sometimes referred to as “success” and “failure”.</p>
+<p>A random variable <span class="math inline">\(X\)</span> is a Bernoulli random variable with parameter <span class="math inline">\(p\)</span>, where <span class="math inline">\(p\)</span> is the probability of success, shown as <span class="math inline">\(X∼Bernoulli(p)\)</span>, if</p>
+<p><span class="math display">\[
+\mathbb{P}(X = x_i)=
+\begin{cases}
+p, &amp; \text{ for } x = 1\\
+1 - p, &amp; \text{ for x = 0}\\
+0, &amp; \text{ otherwise}
+\end{cases}
+\]</span></p>
+<p><strong>Example:</strong> A die is tossed, and we are interested at die showing 5, so it either it shows a 5 or not.</p>
+</div>
+<div id="binomial-distribution" class="section level4">
+<h4>Binomial distribution</h4>
+<p>Assume that we repeat a Bernoulli experiment <em>n</em> times, also, assume that the repetitions are independent, i.e., the result of an experiment won’t impact another one. A random variable <span class="math inline">\(X\)</span> is said to be a binomial random variable with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, shown as <span class="math inline">\(X∼Binomial(n,p)\)</span>, if</p>
+<p><span class="math display">\[\mathbb{P}(X = k) = \binom{n}{k}p^k(1-p)^{n-k}, k=0,1,...,n\]</span></p>
+<p><strong>Example:</strong> A coin is thrown 3 times. What is the probability of 2 heads?</p>
+</div>
+<div id="geometric-distribution" class="section level4">
+<h4>Geometric distribution</h4>
+<p>Repeating independent Bernoulli trials until observing the first success. A random variable <span class="math inline">\(X\)</span> is said to be a geometric random variable with parameter <span class="math inline">\(p\)</span>, shown as <span class="math inline">\(X∼Geometric(p)\)</span> if</p>
+<p><span class="math display">\[\mathbb{P}(X = k) = p(1-p)^{k-1}, k=1,2, ...\]</span></p>
+</div>
+<div id="poisson-distribution" class="section level4">
+<h4>Poisson distribution</h4>
+<p>Used in scenarios where we are counting the occurrences of certain events in an interval of time or space. A random variable <span class="math inline">\(X\)</span> is said to be a Poisson random variable with parameter <span class="math inline">\(\lambda\)</span>, shown as <span class="math inline">\(X∼Poisson(\lambda)\)</span>, if</p>
+<p><span class="math display">\[\mathbb{P}(X = k) = \frac{e^{-\lambda}\lambda^k}{k!}, k=0,1,...\]</span></p>
+<p><strong>Example:</strong> A phone number receives, on average, 5 calls per minute. What is the probability of not receiving a call in one minute?</p>
+</div>
+</div>
+</div>

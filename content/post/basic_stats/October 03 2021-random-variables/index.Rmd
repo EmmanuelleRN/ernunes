@@ -1,0 +1,101 @@
+---
+title: Random Variables
+author: Emmanuelle R. Nunes
+date: October 03 2021
+slug: October 03 2021-random-variables
+categories: 
+  - Probability
+  - Random Variables
+  - Introduction
+tags: 
+  - Probability
+  - Random Variables
+  - Introduction
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-10-03T15:06:53+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+We talked before about probability using simple sample spaces, but in reality, we will map situations to probabilistic models that cater to all possible results. The variables to which we are going to construct probabilistic models are called **random variables**.
+
+A random variable is a real-valued variable whose value is determined by an underlying random experiment. We usually show random variables by capital letters such as $X$, $Y$, and $Z$. Since a random variable is a function, we can talk about its range. The range of a random variable $X$ is the set of possible values for $X$. 
+
+## Discrete Random Variables
+
+$X$ is a discrete random variable, if its range is countable.
+
+**Example:** Imagine that we extracted 2 balls without repositioning from an urn that initially contained 2 blue balls and 3 violet balls. Let’s define $X$ as the number of violet balls obtained after both extractions. The following chart shows us the possible outcomes for $X$.
+
+| Result | Probability | X |
+| -- | -- | -- |
+| BB | 1/10 | 0 |
+| BV | 3/10 | 1 |
+| VB | 3/10 | 1 |
+| VV | 3/10 | 2 |
+
+Each result of the experiment is associated with a value of $X$. Each of these results has a probability associated, which allow us to write the function (*x*, p(*x*)) that is a model for the distribution of $X$. The function (*x*, p(*x*)) is called **probability function** of $X$.
+
+In the table below, we have the probability distribution of $X$ for the example we just saw.
+
+| x | p(x) |
+| -- | -- | -- |
+| 0 | 1/10 |
+| 1 | 6/10 |
+| 2 | 3/10|
+
+### Special distributions
+
+Some random variables adapt very well to a series of practical problems, and they have been given unique names.
+
+#### Discrete Uniform distribution
+
+Each value has the same probability of happening. X is uniformly distributed if and only if
+
+$$\mathbb{P}(X = x_i) = \frac{1}{n} \forall i=1,…,n$$
+
+#### Bernoulli
+
+It can only take two possible values, usually 0 and 1. This random variable models random experiments that have two possible outcomes, sometimes referred to as "success" and "failure".
+
+A random variable $X$ is a Bernoulli random variable with parameter $p$, where $p$ is the probability of success, shown as $X∼Bernoulli(p)$, if
+
+\[
+\mathbb{P}(X = x_i)=
+\begin{cases}
+p, & \text{ for } x = 1\\
+1 - p, & \text{ for x = 0}\\
+0, & \text{ otherwise}
+\end{cases}
+\]
+
+**Example:** A die is tossed, and we are interested at die showing 5, so it either it shows a 5 or not.
+
+#### Binomial distribution
+
+Assume that we repeat a Bernoulli experiment *n* times, also, assume that the repetitions are independent, i.e., the result of an experiment won't impact another one. A random variable $X$ is said to be a binomial random variable with parameters $n$ and $p$, shown as $X∼Binomial(n,p)$, if
+
+$$\mathbb{P}(X = k) = \binom{n}{k}p^k(1-p)^{n-k}, k=0,1,...,n$$
+
+**Example:** A coin is thrown 3 times. What is the probability of 2 heads?
+
+#### Geometric distribution
+
+Repeating independent Bernoulli trials until observing the first success. A random variable $X$ is said to be a geometric random variable with parameter $p$, shown as $X∼Geometric(p)$ if
+
+$$\mathbb{P}(X = k) = p(1-p)^{k-1}, k=1,2, ...$$
+
+#### Poisson distribution
+
+Used in scenarios where we are counting the occurrences of certain events in an interval of time or space. A random variable $X$ is said to be a Poisson random variable with parameter $\lambda$, shown as $X∼Poisson(\lambda)$, if 
+
+$$\mathbb{P}(X = k) = \frac{e^{-\lambda}\lambda^k}{k!}, k=0,1,...$$
+
+**Example:** A phone number receives, on average, 5 calls per minute. What is the probability of not receiving a call in one minute?
+
