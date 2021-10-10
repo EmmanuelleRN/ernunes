@@ -99,3 +99,52 @@ $$\mathbb{P}(X = k) = \frac{e^{-\lambda}\lambda^k}{k!}, k=0,1,...$$
 
 **Example:** A phone number receives, on average, 5 calls per minute. What is the probability of not receiving a call in one minute?
 
+## Continuous Random Variables
+
+A **continuous random variable** is one which takes an infinite number of possible values; It is defined over an interval of values, and is represented by the area under a curve. The probability of observing any single value is equal to 0, since the number of values which may be assumed by the random variable is infinite.
+
+### Special distributions
+
+We also have special distributions for continuous random variables.
+
+#### Uniform distribution
+
+A random variable $X$ is said to have a **Uniform distribution** over the interval $[a,b]$, shown as $X∼\mathcal{U}(a,b)$, if:
+
+\[
+f(x;a, b)=
+\begin{cases}
+\frac{1}{b-a}, & \text{if } a \leq x \leq b\\
+0, & \text{ otherwise}
+\end{cases}
+\]
+
+#### Exponential distribution
+
+A random variable $X$ is said to have an **exponential distribution** with parameter $\lambda > 0$, shown as $X∼Exp(\lambda)$, if 
+
+\[
+f(x; \lambda)=
+\begin{cases}
+\lambda e^{-\lambda x}, & \text{ for } x > 0\\
+0, & \text{ otherwise}
+\end{cases}
+\]
+
+#### Normal (Gaussian) distribution
+
+The normal distribution is by far the most important probability distribution. One of the main reasons for that is the Central Limit Theorem (CLT) that we will discuss in another moment.
+
+A random variable $X$ is said to have a **normal distribution** with parameter $\mu \in \mathbb{R}$ and $\sigma^2 > 0$ if
+
+$$f(x; \mu, \sigma^2) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, -\infty < x < \infty$$
+
+Below we can see the representation of a normal distribution with mean $\mu$ and standard deviation $\sigma$
+
+<img src="www/normal.png"/>
+
+When $\mu = 0$ and $\sigma = 1$ we say that we have a **standard normal distribution** ans we represent as $Z∼\mathcal{N}(0,1)$ and the probability function is reduced to
+
+$$f(z) = \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}, -\infty < z < \infty$$
+
+If $X∼\mathcal{N}(\mu, \sigma^2)$, then the variable defined as $Z = \frac{X - \mu}{\sigma}$ has mean 0 and variance 1

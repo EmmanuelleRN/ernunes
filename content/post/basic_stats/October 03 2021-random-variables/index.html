@@ -132,3 +132,44 @@ p, &amp; \text{ for } x = 1\\
 </div>
 </div>
 </div>
+<div id="continuous-random-variables" class="section level2">
+<h2>Continuous Random Variables</h2>
+<p>A <strong>continuous random variable</strong> is one which takes an infinite number of possible values; It is defined over an interval of values, and is represented by the area under a curve. The probability of observing any single value is equal to 0, since the number of values which may be assumed by the random variable is infinite.</p>
+<div id="special-distributions-1" class="section level3">
+<h3>Special distributions</h3>
+<p>We also have special distributions for continuous random variables.</p>
+<div id="uniform-distribution" class="section level4">
+<h4>Uniform distribution</h4>
+<p>A random variable <span class="math inline">\(X\)</span> is said to have a <strong>Uniform distribution</strong> over the interval <span class="math inline">\([a,b]\)</span>, shown as <span class="math inline">\(X∼\mathcal{U}(a,b)\)</span>, if:</p>
+<p><span class="math display">\[
+f(x;a, b)=
+\begin{cases}
+\frac{1}{b-a}, &amp; \text{if } a \leq x \leq b\\
+0, &amp; \text{ otherwise}
+\end{cases}
+\]</span></p>
+</div>
+<div id="exponential-distribution" class="section level4">
+<h4>Exponential distribution</h4>
+<p>A random variable <span class="math inline">\(X\)</span> is said to have an <strong>exponential distribution</strong> with parameter <span class="math inline">\(\lambda &gt; 0\)</span>, shown as <span class="math inline">\(X∼Exp(\lambda)\)</span>, if</p>
+<p><span class="math display">\[
+f(x; \lambda)=
+\begin{cases}
+\lambda e^{-\lambda x}, &amp; \text{ for } x &gt; 0\\
+0, &amp; \text{ otherwise}
+\end{cases}
+\]</span></p>
+</div>
+<div id="normal-gaussian-distribution" class="section level4">
+<h4>Normal (Gaussian) distribution</h4>
+<p>The normal distribution is by far the most important probability distribution. One of the main reasons for that is the Central Limit Theorem (CLT) that we will discuss in another moment.</p>
+<p>A random variable <span class="math inline">\(X\)</span> is said to have a <strong>normal distribution</strong> with parameter <span class="math inline">\(\mu \in \mathbb{R}\)</span> and <span class="math inline">\(\sigma^2 &gt; 0\)</span> if</p>
+<p><span class="math display">\[f(x; \mu, \sigma^2) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, -\infty &lt; x &lt; \infty\]</span></p>
+<p>Below we can see the representation of a normal distribution with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span></p>
+<p><img src="www/normal.PNG"/></p>
+<p>When <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma = 1\)</span> we say that we have a <strong>standard normal distribution</strong> ans we represent as <span class="math inline">\(Z∼\mathcal{N}(0,1)\)</span> and the probability function is reduced to</p>
+<p><span class="math display">\[f(z) = \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}, -\infty &lt; z &lt; \infty\]</span></p>
+<p>If <span class="math inline">\(X∼\mathcal{N}(\mu, \sigma^2)\)</span>, then the variable defined as <span class="math inline">\(Z = \frac{X - \mu}{\sigma}\)</span> has mean 0 and variance 1</p>
+</div>
+</div>
+</div>
